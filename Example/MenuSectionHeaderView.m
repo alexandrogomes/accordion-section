@@ -12,6 +12,7 @@
 
 @interface MenuSectionHeaderView ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation MenuSectionHeaderView {
@@ -32,6 +33,7 @@
         
         [UIView animateWithDuration:0.2 delay:0.0 options: UIViewAnimationOptionAllowUserInteraction |UIViewAnimationOptionCurveLinear animations:^{
             self.imageView.transform = CGAffineTransformIdentity;
+            self.lineView.alpha = 1;
         } completion:^(BOOL finished) {
             isRotating = NO;
         }];
@@ -39,6 +41,7 @@
     } else {
         [self.layer removeAllAnimations];
         self.imageView.transform = CGAffineTransformIdentity;
+        
         isRotating = NO;
     }
 }
@@ -51,6 +54,7 @@
         
         [UIView animateWithDuration:0.2 delay:0.0 options: UIViewAnimationOptionAllowUserInteraction |UIViewAnimationOptionCurveLinear animations:^{
             self.imageView.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(180.0f));
+            self.lineView.alpha = 0;
         } completion:^(BOOL finished) {
             isRotating = NO;
         }];

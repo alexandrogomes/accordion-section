@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9AE0EACF-130F-4D30-9D3E-6415367B6632</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DAD0E2D4B500C259C4DE7870DEBB5EB5CCFF33AB</key>
+		<string>https://github.com/alexandrogomes/accordion-section.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Example.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DAD0E2D4B500C259C4DE7870DEBB5EB5CCFF33AB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alexandrogomes/accordion-section.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DAD0E2D4B500C259C4DE7870DEBB5EB5CCFF33AB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DAD0E2D4B500C259C4DE7870DEBB5EB5CCFF33AB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Example</string>
+		</dict>
+	</array>
+</dict>
+</plist>

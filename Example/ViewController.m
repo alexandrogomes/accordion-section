@@ -17,14 +17,18 @@
 @implementation ViewController
 
 static NSString *identifier = @"MenuSectionHeaderView";
+static NSString *identifier2 = @"MenuItemTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
+    UINib *nib2 = [UINib nibWithNibName:identifier2 bundle:nil];
     [self.tableView registerNib:nib forHeaderFooterViewReuseIdentifier:identifier];
+    [self.tableView registerNib:nib2 forCellReuseIdentifier:identifier2];
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.menu = [self buildMenu];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
 -(NSString *)sectionHeaderReuseIdentifier {
@@ -78,11 +82,12 @@ static NSString *identifier = @"MenuSectionHeaderView";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier2];
     id <RRNCollapsableSectionItemProtocol> mSection = self.menu[indexPath.section];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = mSection.items[indexPath.row];
     return cell;
+//    return cell;
 }
 
 @end

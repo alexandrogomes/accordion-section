@@ -10,4 +10,5 @@
 
 @interface MenuSectionHeaderView : UITableViewHeaderFooterView <RRNCollapsableSectionHeaderProtocol>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
 @end

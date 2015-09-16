@@ -60,6 +60,7 @@
     view.interactionDelegate = self;
     view.tag = section;
     view.titleLabel.text = menuSection.title;
+
     return view;
 }
 
@@ -80,10 +81,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
 }
-
-//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return 10.0f;
-//}
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return self.footerView;

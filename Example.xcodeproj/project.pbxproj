@@ -18,6 +18,9 @@
 		50E4BAFB1B9E908C002488A6 /* MenuSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BAFA1B9E908C002488A6 /* MenuSection.m */; };
 		50E4BAFF1B9E90E3002488A6 /* MenuSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E4BAFD1B9E90E3002488A6 /* MenuSectionHeaderView.m */; };
 		50E4BB001B9E90E3002488A6 /* MenuSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E4BAFE1B9E90E3002488A6 /* MenuSectionHeaderView.xib */; };
+		A6B2A9191BA9A9A30069EC46 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B2A9181BA9A9A30069EC46 /* ViewController.xib */; };
+		A6B2A91E1BA9E1E20069EC46 /* MenuItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B2A91C1BA9E1E20069EC46 /* MenuItemTableViewCell.m */; };
+		A6B2A91F1BA9E1E20069EC46 /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B2A91D1BA9E1E20069EC46 /* MenuItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,10 @@
 		50E4BAFC1B9E90E3002488A6 /* MenuSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSectionHeaderView.h; sourceTree = "<group>"; };
 		50E4BAFD1B9E90E3002488A6 /* MenuSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSectionHeaderView.m; sourceTree = "<group>"; };
 		50E4BAFE1B9E90E3002488A6 /* MenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSectionHeaderView.xib; sourceTree = "<group>"; };
+		A6B2A9181BA9A9A30069EC46 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		A6B2A91B1BA9E1E20069EC46 /* MenuItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItemTableViewCell.h; sourceTree = "<group>"; };
+		A6B2A91C1BA9E1E20069EC46 /* MenuItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItemTableViewCell.m; sourceTree = "<group>"; };
+		A6B2A91D1BA9E1E20069EC46 /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +121,12 @@
 		50E4BAC71B9E8D72002488A6 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				50E4BAF81B9E9031002488A6 /* RRNCollapsableSectionTableViewController */,
 				50E4BACC1B9E8D72002488A6 /* AppDelegate.h */,
 				50E4BACD1B9E8D72002488A6 /* AppDelegate.m */,
-				50E4BAF81B9E9031002488A6 /* RRNCollapsableSectionTableViewController */,
 				50E4BACF1B9E8D72002488A6 /* ViewController.h */,
 				50E4BAD01B9E8D72002488A6 /* ViewController.m */,
+				A6B2A9181BA9A9A30069EC46 /* ViewController.xib */,
 				50E4BAF91B9E908C002488A6 /* MenuSection.h */,
 				50E4BAFA1B9E908C002488A6 /* MenuSection.m */,
 				50E4BAFC1B9E90E3002488A6 /* MenuSectionHeaderView.h */,
@@ -128,6 +136,9 @@
 				50E4BAD51B9E8D72002488A6 /* Images.xcassets */,
 				50E4BAD71B9E8D72002488A6 /* LaunchScreen.xib */,
 				50E4BAC81B9E8D72002488A6 /* Supporting Files */,
+				A6B2A91B1BA9E1E20069EC46 /* MenuItemTableViewCell.h */,
+				A6B2A91C1BA9E1E20069EC46 /* MenuItemTableViewCell.m */,
+				A6B2A91D1BA9E1E20069EC46 /* MenuItemTableViewCell.xib */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -247,8 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6B2A9191BA9A9A30069EC46 /* ViewController.xib in Resources */,
 				50E4BB001B9E90E3002488A6 /* MenuSectionHeaderView.xib in Resources */,
 				50E4BAD41B9E8D72002488A6 /* Main.storyboard in Resources */,
+				A6B2A91F1BA9E1E20069EC46 /* MenuItemTableViewCell.xib in Resources */,
 				50E4BAD91B9E8D72002488A6 /* LaunchScreen.xib in Resources */,
 				50E4BAD61B9E8D72002488A6 /* Images.xcassets in Resources */,
 			);
@@ -272,6 +285,7 @@
 				50E4BAD11B9E8D72002488A6 /* ViewController.m in Sources */,
 				50E4BAFF1B9E90E3002488A6 /* MenuSectionHeaderView.m in Sources */,
 				50E4BAF71B9E8FA7002488A6 /* RRNCollapsableSectionTableViewController.m in Sources */,
+				A6B2A91E1BA9E1E20069EC46 /* MenuItemTableViewCell.m in Sources */,
 				50E4BACE1B9E8D72002488A6 /* AppDelegate.m in Sources */,
 				50E4BACB1B9E8D72002488A6 /* main.m in Sources */,
 			);
