@@ -7,16 +7,20 @@
 //
 
 #import "RRNCollapsableSectionHeaderProtocol.h"
+#import "JKExpandTableViewDelegate.h"
+#import "RRNCollapsableSectionItemProtocol.h"
 
-@interface RRNCollapsableTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, RRNCollapsableSectionHeaderReactiveProtocol>
+@interface RRNCollapsableTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, RRNCollapsableSectionHeaderReactiveProtocol,JKExpandTableViewDelegate>
 
 //Override required
 -(NSArray *)model;
 -(UITableView *)collapsableTableView;
 -(NSString *)sectionHeaderReuseIdentifier;
+-(NSMutableArray*)sections;
 
 //Override optional
 -(void)userTapped:(UIView <RRNCollapsableSectionHeaderProtocol> *)view;
 -(BOOL)singleOpenSelectionOnly;
+-(NSArray *)indexPathsForSection:(NSInteger)section forMenuSection:(id <RRNCollapsableSectionItemProtocol>)menuSection;
 
 @end

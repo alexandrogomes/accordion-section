@@ -7,8 +7,9 @@
 //
 
 #import "RRNCollapsableSectionTableViewController.h"
+#import "JKExpandTableViewDelegate.h"
 
-@interface ViewController : RRNCollapsableTableViewController
+@interface ViewController : RRNCollapsableTableViewController 
 
 @end
 

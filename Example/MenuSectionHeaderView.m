@@ -66,4 +66,25 @@
     }
 }
 
+- (IBAction)actionMarkSection:(id)sender {
+    self.btnCheck.selected = !self.btnCheck.selected;
+    if (self.btnCheck.selected) {
+        self.btnCheck.backgroundColor = [UIColor greenColor];
+    } else {
+        self.btnCheck.backgroundColor = [UIColor grayColor];
+    }
+
+    [self.delegateSelection tableView:nil didSelectParentCellAtIndex:self.btnCheck.selected inParent:self.tag];
+    
+}
+
+-(void)markItem:(BOOL)value {
+    self.btnCheck.selected = value;
+    if (self.btnCheck.selected) {
+        self.btnCheck.backgroundColor = [UIColor greenColor];
+    } else {
+        self.btnCheck.backgroundColor = [UIColor grayColor];
+    }
+}
+
 @end

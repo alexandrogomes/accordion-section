@@ -7,10 +7,12 @@
 //
 
 #import "RRNCollapsableSectionHeaderReactiveProtocol.h"
+#import "JKExpandTableViewDelegate.h"
 
 @protocol RRNCollapsableSectionHeaderProtocol <NSObject>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) id <RRNCollapsableSectionHeaderReactiveProtocol> interactionDelegate;
+@property (weak,nonatomic) id <JKExpandTableViewDelegate> delegateSelection;
 -(void)openAnimated:(BOOL)animated;
 -(void)closeAnimated:(BOOL)animated;
 @end

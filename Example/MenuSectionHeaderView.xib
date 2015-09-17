@@ -51,6 +51,9 @@
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="actionMarkSection:" destination="iN0-l3-epB" eventType="touchUpInside" id="dIK-j2-W0v"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,6 +83,7 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="btnCheck" destination="lev-PD-33b" id="xOi-2N-4Ah"/>
                 <outlet property="imageView" destination="E6J-2v-Ej4" id="teI-dT-xsh"/>
                 <outlet property="lineView" destination="oE4-bH-eAk" id="Cie-6Z-YC9"/>
                 <outlet property="titleLabel" destination="3yG-mP-Nmt" id="6Oc-zC-086"/>

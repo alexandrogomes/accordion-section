@@ -8,6 +8,7 @@
 
 #import "RRNCollapsableSectionTableViewController.h"
 #import "RRNCollapsableSectionItemProtocol.h"
+#import "MenuSectionHeaderView.h"
 
 @interface RRNCollapsableTableViewController ()
 
@@ -33,6 +34,11 @@
     return nil;
 }
 
+-(NSMutableArray *)sections {
+    return nil;
+}
+
+
 -(BOOL)singleOpenSelectionOnly {
     return NO;
 }
@@ -52,18 +58,6 @@
     return (menuSection.isVisible.boolValue) ? menuSection.items.count : 0;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    id <RRNCollapsableSectionItemProtocol> menuSection = [[self model] objectAtIndex:section];
-    
-    UIView <RRNCollapsableSectionHeaderProtocol> *view = (UIView <RRNCollapsableSectionHeaderProtocol> *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:[self sectionHeaderReuseIdentifier]];
-    view.interactionDelegate = self;
-    view.tag = section;
-    view.titleLabel.text = menuSection.title;
-
-    return view;
-}
-
 -(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     
     id <RRNCollapsableSectionItemProtocol> menuSection = [[self model] objectAtIndex:section];
@@ -77,6 +71,17 @@
     }
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    id <RRNCollapsableSectionItemProtocol> menuSection = [[self model] objectAtIndex:section];
+    
+    UIView <RRNCollapsableSectionHeaderProtocol> *view = (UIView <RRNCollapsableSectionHeaderProtocol> *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:[self sectionHeaderReuseIdentifier]];
+    view.interactionDelegate = self;
+    view.tag = section;
+    view.titleLabel.text = menuSection.title;
+    view.delegateSelection = self;
+    return view;
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
@@ -89,6 +94,7 @@
 #pragma mark - ReactiveSectionHeaderProtocol
 
 -(void)userTapped:(UIView *)view {
+    
     
     UITableView *tableView = [self collapsableTableView];
     
@@ -105,6 +111,9 @@
         BOOL isVisible = menuSection.isVisible.boolValue;
         
         if (isVisible && chosenMenuSection) {
+            //desmarcar secao
+            //((MenuSectionHeaderView*)view).btnCheck.hidden = YES;
+            
             
             menuSection.isVisible = @NO;
             
@@ -120,7 +129,10 @@
             [tableView deleteRowsAtIndexPaths:indexPaths
                              withRowAnimation:(foundOpenUnchosenMenuSection) ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop];
             
-        } else if (!isVisible && chosenMenuSection) {
+        } //Abrir menu
+        else if (!isVisible && chosenMenuSection) {
+            //Marcar secao como selecionada
+            //((MenuSectionHeaderView*)view).btnCheck.hidden = NO;
             
             menuSection.isVisible = @YES;
             
@@ -135,6 +147,7 @@
             
             [tableView insertRowsAtIndexPaths:indexPaths
                              withRowAnimation:(foundOpenUnchosenMenuSection) ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop];
+            
             
         } else if (isVisible && !chosenMenuSection && [self singleOpenSelectionOnly]) {
             
@@ -155,6 +168,7 @@
             
             [tableView deleteRowsAtIndexPaths:indexPaths
                              withRowAnimation:(view.tag > section) ? UITableViewRowAnimationTop : UITableViewRowAnimationBottom];
+            
             
         }
         

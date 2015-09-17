@@ -57,6 +57,7 @@
 		50E4BAFC1B9E90E3002488A6 /* MenuSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSectionHeaderView.h; sourceTree = "<group>"; };
 		50E4BAFD1B9E90E3002488A6 /* MenuSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSectionHeaderView.m; sourceTree = "<group>"; };
 		50E4BAFE1B9E90E3002488A6 /* MenuSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSectionHeaderView.xib; sourceTree = "<group>"; };
+		A6161D031BAB1167009EFE13 /* JKExpandTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKExpandTableViewDelegate.h; sourceTree = "<group>"; };
 		A6B2A9181BA9A9A30069EC46 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		A6B2A91B1BA9E1E20069EC46 /* MenuItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItemTableViewCell.h; sourceTree = "<group>"; };
 		A6B2A91C1BA9E1E20069EC46 /* MenuItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItemTableViewCell.m; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 				509292431BA4402F003F72D7 /* RRNCollapsableSectionHeaderReactiveProtocol.h */,
 				50E4BAF31B9E8FA7002488A6 /* RRNCollapsableSectionHeaderProtocol.h */,
 				50E4BAF41B9E8FA7002488A6 /* RRNCollapsableSectionItemProtocol.h */,
+				A6161D031BAB1167009EFE13 /* JKExpandTableViewDelegate.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
