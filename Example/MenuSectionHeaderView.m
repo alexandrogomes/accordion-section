@@ -33,9 +33,10 @@
         
         [UIView animateWithDuration:0.2 delay:0.0 options: UIViewAnimationOptionAllowUserInteraction |UIViewAnimationOptionCurveLinear animations:^{
             self.imageView.transform = CGAffineTransformIdentity;
-            self.lineView.alpha = 1;
+            //self.lineView.backgroundColor = [UIColor whiteColor];
         } completion:^(BOOL finished) {
             isRotating = NO;
+            self.lineView.alpha = 1;
         }];
         
     } else {
@@ -54,9 +55,10 @@
         
         [UIView animateWithDuration:0.2 delay:0.0 options: UIViewAnimationOptionAllowUserInteraction |UIViewAnimationOptionCurveLinear animations:^{
             self.imageView.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(180.0f));
-            self.lineView.alpha = 0;
+
         } completion:^(BOOL finished) {
             isRotating = NO;
+            self.lineView.alpha = 0;
         }];
         
     } else {

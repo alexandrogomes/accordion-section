@@ -43,6 +43,7 @@ static NSString *identifier2 = @"MenuItemTableViewCell";
     
     NSMutableArray *collector = [NSMutableArray new];
     self.sectionsSelected = [NSMutableArray new];
+    self.itemsSelected = [NSMutableArray new];
     //for (NSInteger i = 0; i < 5; i++) {
         
         MenuSection *section1 = [MenuSection new];
@@ -63,9 +64,9 @@ static NSString *identifier2 = @"MenuItemTableViewCell";
     for (int index=0; index <collector.count; index++) {
         [self.sectionsSelected addObject:@NO];
         long itemInSection = ((MenuSection*)[collector objectAtIndex:index]).items.count;
-        NSMutableArray *itemsInSection = [NSMutableArray array];
+        NSMutableArray *itemsInSection = [NSMutableArray new];
         for (int indexItem= 0; indexItem< itemInSection; indexItem++) {
-            [itemsInSection addObject:@"NO"];
+            [itemsInSection addObject:@NO];
         }
         [self.itemsSelected addObject:itemsInSection];
     }
@@ -109,11 +110,14 @@ static NSString *identifier2 = @"MenuItemTableViewCell";
     cell.tag = indexPath.row;
     ((MenuItemTableViewCell*)cell).delegateSelection = self;
     ((MenuItemTableViewCell*)cell).sectionIndex =indexPath.section;
+    ((MenuItemTableViewCell*)cell).lblSection.text = [NSString stringWithFormat:@"%ld",indexPath.section];
     //verifica se a secao esta selecionada
     NSArray *itemInSection = [self.itemsSelected objectAtIndex:indexPath.section];
     if ([[itemInSection objectAtIndex:indexPath.row] boolValue] == YES) {
         [((MenuItemTableViewCell*)cell) markItem:YES];
-    } 
+    } else {
+        [((MenuItemTableViewCell*)cell) markItem:NO];
+    }
     
     
     return cell;
@@ -122,15 +126,30 @@ static NSString *identifier2 = @"MenuItemTableViewCell";
 #pragma mark - methods JKExpandTableViewDelegate
 
 - (void) tableView:(UITableView *)tableView didSelectCellAtChildIndex:(BOOL)selected inChild:(NSInteger)childIndex withInParentCellIndex:(NSInteger)parentIndex{
-    NSMutableArray *itemInSection = [self.itemsSelected objectAtIndex:parentIndex];
+    NSMutableArray *childs = [self.itemsSelected objectAtIndex:parentIndex];
     if (selected) {
-        NSLog(@"didSelectCellAtChildIndex - marcou o filho: %ld - que possui o pai na posição: %ld",childIndex,parentIndex -1);
-        [[itemInSection objectAtIndex:childIndex] replaceObjectAtIndex:childIndex withObject:@"YES"];
-    } else {
-        NSLog(@"didSelectCellAtChildIndex - desmarcou o filho: %ld - que possui o pai na posição: %ld",childIndex,parentIndex -1);
-
-        [[itemInSection objectAtIndex:childIndex] replaceObjectAtIndex:childIndex withObject:@"NO"];
+        NSLog(@"didSelectCellAtChildIndex - marcou o filho: %ld - que possui o pai na posição: %ld",childIndex,parentIndex);
+        [childs replaceObjectAtIndex:childIndex withObject:@YES];
         
+        //Verifica se existem outros filhos selecionados, caso todos os itens estejam selecionas marca a secao
+
+        int total =0 ;
+        for (int index =0; index<childs.count;index++) {
+            if ([[childs objectAtIndex:index] boolValue] == NO) {
+                break;
+            }
+            total++;
+        }
+        if (total == childs.count) {
+            [[self sections] replaceObjectAtIndex:parentIndex withObject:@YES];
+        }
+
+    } else {
+        NSLog(@"didSelectCellAtChildIndex - desmarcou o filho: %ld - que possui o pai na posição: %ld",childIndex,parentIndex);
+
+        [childs replaceObjectAtIndex:childIndex withObject:@NO];
+        //Desmarca o pai porque existe pelo menos um filho desmarcado
+        [[self sections] replaceObjectAtIndex:parentIndex withObject:@NO];
     }
     [self.tableView reloadData];
 }
@@ -141,9 +160,14 @@ static NSString *identifier2 = @"MenuItemTableViewCell";
     NSArray *childArray = [self indexPathsForSection:parentIndex forMenuSection:mSection];
     
     if (selected) {
-        NSLog(@"didSelectParentCellAtIndex - está marcado o pai: %ld",parentIndex);
+        NSLog(@"didSelectParentCellAtIndex - está marcado o pai: %ld - ",parentIndex);
 
         [[self sections] replaceObjectAtIndex:parentIndex withObject:@YES];
+        NSMutableArray *childs = [self.itemsSelected objectAtIndex:parentIndex];
+        for (int index =0; index<childs.count;index++) {
+            [childs replaceObjectAtIndex:index withObject:@YES];
+        }
+        
         for (NSIndexPath *indexpath in childArray) {
             MenuItemTableViewCell *cell = (MenuItemTableViewCell*)[self.tableView cellForRowAtIndexPath:indexpath];
             [cell markItem:selected];
@@ -153,6 +177,11 @@ static NSString *identifier2 = @"MenuItemTableViewCell";
         NSLog(@"didSelectParentCellAtIndex - desmarcou o pai: %ld",parentIndex);
 
         [[self sections] replaceObjectAtIndex:parentIndex withObject:@NO];
+        NSMutableArray *childs = [self.itemsSelected objectAtIndex:parentIndex];
+        for (int index =0; index<childs.count;index++) {
+            [childs replaceObjectAtIndex:index withObject:@NO];
+        }
+
         for (NSIndexPath *indexpath in childArray) {
             MenuItemTableViewCell *cell = (MenuItemTableViewCell*)[self.tableView cellForRowAtIndexPath:indexpath];
             [cell markItem:selected];

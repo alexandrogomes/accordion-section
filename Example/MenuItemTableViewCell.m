@@ -36,7 +36,7 @@
     } else {
         self.btnMaskItem.backgroundColor = [UIColor grayColor];
     }
-    [self.delegateSelection tableView:nil didSelectCellAtChildIndex:self.btnMaskItem.selected inChild:self.tag withInParentCellIndex:self.tag];
+    [self.delegateSelection tableView:nil didSelectCellAtChildIndex:self.btnMaskItem.selected inChild:self.tag withInParentCellIndex:[self.lblSection.text integerValue]];
 }
 
 

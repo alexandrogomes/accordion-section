@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment version="2304" identifier="iOS"/>
+        <development version="6300" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -14,55 +16,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD0-yJ-ZNO">
-                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym7-hb-Lz2">
+                        <rect key="frame" x="8" y="0.0" width="209" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tR4-1y-gF1">
+                        <rect key="frame" x="232" y="7" width="80" height="30"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="46" id="U0P-BF-TyI"/>
+                            <constraint firstAttribute="width" constant="80" id="LzZ-zm-xGo"/>
                         </constraints>
-                        <state key="normal">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="U0P-BF-TyI"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="U0P-BF-TyI"/>
-                            </mask>
-                        </variation>
                         <connections>
-                            <action selector="actionSelectionItem:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="og3-RW-Muv"/>
+                            <action selector="actionSelectionItem:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tzW-wY-mVi"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="centerY" secondItem="rD0-yJ-ZNO" secondAttribute="centerY" constant="-0.5" id="7FF-en-vt9"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="rD0-yJ-ZNO" secondAttribute="trailing" constant="12" id="oud-dW-HLH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tR4-1y-gF1" secondAttribute="trailing" id="9eL-Ct-Roi"/>
+                    <constraint firstItem="tR4-1y-gF1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EX3-re-fyd"/>
+                    <constraint firstItem="ym7-hb-Lz2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="SzD-xu-nEM"/>
+                    <constraint firstItem="ym7-hb-Lz2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yf7-1S-gkQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ym7-hb-Lz2" secondAttribute="bottom" constant="14" id="sKC-ev-YkX"/>
+                    <constraint firstItem="tR4-1y-gF1" firstAttribute="leading" secondItem="ym7-hb-Lz2" secondAttribute="trailing" constant="15" id="w8O-54-Jh8"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="subviews">
-                        <exclude reference="rD0-yJ-ZNO"/>
-                    </mask>
-                    <mask key="constraints">
-                        <exclude reference="7FF-en-vt9"/>
-                        <exclude reference="oud-dW-HLH"/>
-                    </mask>
-                </variation>
-                <variation key="heightClass=regular-widthClass=compact">
-                    <mask key="subviews">
-                        <include reference="rD0-yJ-ZNO"/>
-                    </mask>
-                    <mask key="constraints">
-                        <include reference="7FF-en-vt9"/>
-                        <include reference="oud-dW-HLH"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="btnMaskItem" destination="rD0-yJ-ZNO" id="KEx-Cr-Zxh"/>
+                <outlet property="btnMaskItem" destination="tR4-1y-gF1" id="3X5-Xu-mfO"/>
+                <outlet property="lblSection" destination="ym7-hb-Lz2" id="UCd-GR-aJY"/>
             </connections>
         </tableViewCell>
     </objects>

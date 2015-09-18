@@ -14,6 +14,7 @@
 @property (weak,nonatomic) id <JKExpandTableViewDelegate> delegateSelection;
 @property (assign,nonatomic) NSInteger sectionIndex;
 @property (weak, nonatomic) IBOutlet UIButton *btnMaskItem;
+@property (weak, nonatomic) IBOutlet UILabel *lblSection;
 
 -(void)markItem:(BOOL)value;
 @end

@@ -75,11 +75,17 @@
     
     id <RRNCollapsableSectionItemProtocol> menuSection = [[self model] objectAtIndex:section];
     
-    UIView <RRNCollapsableSectionHeaderProtocol> *view = (UIView <RRNCollapsableSectionHeaderProtocol> *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:[self sectionHeaderReuseIdentifier]];
+    MenuSectionHeaderView <RRNCollapsableSectionHeaderProtocol> *view = (MenuSectionHeaderView <RRNCollapsableSectionHeaderProtocol> *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:[self sectionHeaderReuseIdentifier]];
     view.interactionDelegate = self;
     view.tag = section;
     view.titleLabel.text = menuSection.title;
     view.delegateSelection = self;
+    if ([[[self sections] objectAtIndex:section] boolValue] == YES){
+        [view markItem:YES];
+    } else {
+        [view markItem:NO];
+    }
+        
     return view;
 }
 
@@ -111,9 +117,6 @@
         BOOL isVisible = menuSection.isVisible.boolValue;
         
         if (isVisible && chosenMenuSection) {
-            //desmarcar secao
-            //((MenuSectionHeaderView*)view).btnCheck.hidden = YES;
-            
             
             menuSection.isVisible = @NO;
             
@@ -131,8 +134,6 @@
             
         } //Abrir menu
         else if (!isVisible && chosenMenuSection) {
-            //Marcar secao como selecionada
-            //((MenuSectionHeaderView*)view).btnCheck.hidden = NO;
             
             menuSection.isVisible = @YES;
             

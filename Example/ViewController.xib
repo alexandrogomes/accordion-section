@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
@@ -15,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jf8-Aw-SKw">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jf8-Aw-SKw">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -27,18 +28,22 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Jf8-Aw-SKw" secondAttribute="trailing" id="25c-oI-CUk"/>
                 <constraint firstItem="Jf8-Aw-SKw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FMf-yp-CdX">
                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                 </constraint>
                 <constraint firstAttribute="trailing" secondItem="Jf8-Aw-SKw" secondAttribute="trailing" constant="-200" id="G3v-gM-g6y">
                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                 </constraint>
+                <constraint firstAttribute="bottom" secondItem="Jf8-Aw-SKw" secondAttribute="bottom" id="Lng-nS-Xhf"/>
                 <constraint firstAttribute="bottom" secondItem="Jf8-Aw-SKw" secondAttribute="bottom" constant="200" id="Nqe-rH-waU">
                     <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                 </constraint>
+                <constraint firstItem="Jf8-Aw-SKw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TMZ-MC-11T"/>
                 <constraint firstItem="Jf8-Aw-SKw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Xer-x5-Ub3">
                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                 </constraint>
+                <constraint firstItem="Jf8-Aw-SKw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ecD-1J-hmw"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
